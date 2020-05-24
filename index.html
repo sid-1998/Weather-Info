@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Weather Forcast</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-body text-center bg-primary mt-5">
+                    <h1 id="city"></h1>
+                    <h3 id="state"></h3>
+                    <h3 id="temperature"></h3>
+                    <form class="form-group" id="w-form">
+                        <input type="text" name="" id="w-type" class="form-control">
+                        <input type="text" name="" id="w-description" class="form-control">
+                        <input type="text" name="" id="w-humidity" class="form-control">
+                        <input type="text" name="" id="w-wind" class="form-control">
+                    </form>
+                    <input type="button" value="Change Location" class="btn btn-success" id="changeLoc">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="weather.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
