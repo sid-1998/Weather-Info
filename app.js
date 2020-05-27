@@ -13,8 +13,12 @@ function load(){
         })
 }
 document.getElementById('save-btn').addEventListener('click', ()=>{
-    const city = document.getElementById('new-city').value;
-    console.log(city);
+    const city = document.getElementById('new-city')
+    // console.log(city);
+    weather.setLocation(city.value);
+    weather.getData()
+        .then(data=>ui.insertData(data));
+    
     $('#locModal').modal('hide');
 })
 
