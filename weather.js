@@ -17,6 +17,8 @@ class Weather{
     }
 
     getLocation(){
-        return {city:this.city}
+        if(this.city === undefined){
+            return this.defaultCity;
+        }
     }
 }
