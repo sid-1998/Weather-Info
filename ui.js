@@ -17,5 +17,15 @@ class UI{
         this.humidity.innerHTML = `Humidity: ${data.main.humidity}`;
         this.wind.innerHTML = `Wind Speed: ${data.wind.speed}`;
     }
-    
+    showAlert(message, className){
+        const div = document.createElement('div');
+        div.className = `alert alert-${className}`;
+        div.appendChild(document.createTextNode(message));
+        const parent = document.querySelector('.card');
+        const sibling = document.querySelector('#city');
+        parent.insertBefore(div, sibling);
+        setTimeout(()=>{
+            document.querySelector('.alert').remove()
+        }, 2000);
+    }
 }

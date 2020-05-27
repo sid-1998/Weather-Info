@@ -12,17 +12,31 @@ function load(){
     weather.setLocation(currCity);
     weather.getData()
         .then(data=>{
-            ui.insertData(data);
+            if(data.cod==="404"){
+                console.log("fuck")
+                ui.showAlert("City Not Found", className);
+            }else{
+                ui.insertData(data);
+            }
+            
         })
+        
 }
 document.getElementById('save-btn').addEventListener('click', ()=>{
     const city = document.getElementById('new-city')
     // console.log(city);
     weather.setLocation(city.value);
-    ls.storeInLS(city.value);
     weather.getData()
-        .then(data=>ui.insertData(data));
-    
+        .then(data=>{
+            if(data.cod==="404"){
+                console.log(data)
+                ui.showAlert("City Not Found", "danger");
+            }else{
+                ui.insertData(data);
+                ls.storeInLS(city.value);
+            }
+            
+        })
     $('#locModal').modal('hide');
 })
 
