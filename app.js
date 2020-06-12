@@ -13,10 +13,10 @@ function load(){
     weather.getData()
         .then(data=>{
             if(data.cod==="404"){
-                console.log("fuck")
                 ui.showAlert("City Not Found", className);
             }else{
                 ui.insertData(data);
+                
             }
             
         })
